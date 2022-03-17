@@ -34,7 +34,7 @@
 	- 第5引数: 終了日 (20200304というフォーマットで。なくてもいい。その場合は30行分出力される)
 
 	```python
-	#[("名前"), 何周目か]
+	#[("名前"), 何周目]を各年度で入力する
 	lab_menber_list_M2 = [("foo", 1)]
 	lab_menber_list_M1 = [("s-shiraki", 1), ("nomura", 2), ("t-yamamoto", 3),("y-watanabe", 3), ("nihonmatu", 1), ("miwagawa", 2)]
 	lab_menber_list_B4 = [("hoge", 1), ("bar", 2)]
@@ -43,6 +43,7 @@
 	||3/24(火) ||[[attachment:foo-ken-20200324.pptx|資料]] ||[[attachment:s-shiraki-ken-20200324.pptx|資料]] || || || ||[[attachment:nihonmatu-ken-20200324.pptx|資料]] || ||[[attachment:hoge-ken-20200324.pptx|資料]] || ||
 	||3/31(火) ||[[attachment:foo-ken-20200331.pptx|資料]] || ||[[attachment:nomura-ken-20200331.pptx|資料]] || || || ||[[attachment:miwagawa-ken-20200331.pptx|資料]] || ||[[attachment:bar-ken-20200331.pptx|資料]] ||
 	||4/7(火) ||[[attachment:foo-ken-20200407.pptx|資料]] || || ||[[attachment:t-yamamoto-ken-20200407.pptx|資料]] ||[[attachment:y-watanabe-ken-20200407.pptx|資料]] || || ||[[attachment:hoge-ken-20200407.pptx|資料]] || ||
+	...略
 	```
 
 ### mkmtggrid-multi.py
