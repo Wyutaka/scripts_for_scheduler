@@ -6,6 +6,10 @@ import sys
 import datetime
 import re
 
+# ("名前", 何周目)
+lab_menber_list_M2 = [("foo", 1)]
+lab_menber_list_M1 = [("s-shiraki", 1), ("nomura", 2), ("t-yamamoto", 3),("y-watanabe", 3), ("nihonmatu", 1), ("miwagawa", 2)]
+lab_menber_list_B4 = [("hoge", 1), ("bar", 2)]
 
 def print_usage():
     print("Usage: ", end="")
@@ -23,10 +27,6 @@ def print_usage():
     print("ARG4: Color Mode  (Yes=>1, No=>other)")
     print("ARG5: Start date")
     print("ARG6: End date (Nothig is ok)")
-
-lab_menber_list_B4 = [("hoge", 1), ("bar", 2)]
-lab_menber_list_M1 = [("huga", 1)]
-lab_menber_list_M2 = [("foo", 1)]
 
 # suffix = weeks[d1.weekday] 
 # suffix kentoukai = -ken-[date]
@@ -51,22 +51,20 @@ weeks_prefix = ['', '', '', '', '',
 mode = len(args) - 1
 
 
-if mode == 4:
+if mode == 3:
     d1 = datetime.date.today() 
-elif mode == 5:
-    start_date = args[5]
+elif mode == 4:
+    start_date = args[4]
     d1 = datetime.datetime.strptime(start_date, "%Y%m%d")
-elif mode == 6:
-    start_date = args[5]
-    end_date = args[6]
+elif mode == 5:
+    start_date = args[4]
+    end_date = args[5]
     d1 = datetime.datetime.strptime(start_date, "%Y%m%d")
     d2 = datetime.datetime.strptime(end_date, "%Y%m%d")
 else:
     print("Error!!!")
     print_usage()
     exit(1)
-
-columns = int(args[1])
 
 columns = len(lab_menber_list_B4) + len(lab_menber_list_M1) + len(lab_menber_list_M2)
 _, duty_list_M2 = zip(*lab_menber_list_M2)
@@ -75,16 +73,14 @@ _, duty_list_B4 = zip(*lab_menber_list_B4)
 duty_span_M2 = max(duty_list_M2)
 duty_span_M1 = max(duty_list_M1)
 duty_span_B4 = max(duty_list_B4)
-print("M2 span is " + str(duty_span_M2))
-print("M1 span is " + str(duty_span_M1))
-print("B4 span is " + str(duty_span_B4))
 
-
-diff = int(args[2])
-print_week = True if int(args[3]) == 1 else False
-color_mode = True if int(args[4]) == 1 else False
+diff = int(args[1])
+print_week = True if int(args[2]) == 1 else False
+color_mode = True if int(args[3]) == 1 else False
 
 duty_M2, duty_M1, duty_B4 = 0, 0, 0
+
+counter = 0
 if print_week:
     printed_format = "{0:%-m/%-d}({1})"
     # -m, -dとすることで0埋めしない
@@ -125,7 +121,9 @@ while True:
     duty_B4 = (duty_B4 + 1) % duty_span_B4
 
     d1 += datetime.timedelta(days=diff)
-    if mode == 6 and d1 > d2:
+    if mode == 5 and d1 > d2:
         break
-    elif mode is not 6 and counter >= MAX:
+    elif mode is not 5 and counter >= MAX:
         break
+
+    counter += 1
