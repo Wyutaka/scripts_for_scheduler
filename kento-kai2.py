@@ -92,7 +92,12 @@ else:
     printed_format = "{0:%-m/%-d}"
 
 while True:
+    suffix_ken = "-ken-" 
+    suffix_filename_extention = ".pptx"
     printed_str = printed_format.format(d1, weeks[d1.weekday()])
+    datetext = str(d1)
+    suffix_date = re.sub("|-", "", datetext[:datetext.find(' ')])
+    suffix_text = suffix_ken + suffix_date + suffix_filename_extention
     if color_mode == True:
         printed_str = weeks_prefix[d1.weekday()] + printed_str
     printed_str = "||" + printed_str + " ||"        
@@ -100,17 +105,17 @@ while True:
     print(printed_str, end='')
     for index in range(len(lab_menber_list_M2)):
         if lab_menber_list_M2[index][1] == duty_M2 + 1:
-            print("hoge" + "".join([" ||"]), end='')
+            print(lab_menber_list_M2[index][0] + suffix_text + "".join([" ||"]), end='')
         else:
             print(" ||", end='')
     for index in range(len(lab_menber_list_M1)):
         if lab_menber_list_M1[index][1] == duty_M1 + 1:
-            print("hoge" + "".join([" ||"]), end='')
+            print(lab_menber_list_M1[index][0] + suffix_text + "".join([" ||"]), end='')
         else:
             print(" ||", end='')
     for index in range(len(lab_menber_list_B4)):
         if lab_menber_list_B4[index][1] == duty_B4 + 1:
-            print("hoge" + "".join([" ||"]), end='')
+            print(lab_menber_list_B4[index][0] + suffix_text + "".join([" ||"]), end='')
         else:
             print(" ||", end='')
     print() # 改行
