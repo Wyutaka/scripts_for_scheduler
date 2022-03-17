@@ -32,8 +32,6 @@ def print_usage():
 # suffix kentoukai = -ken-[date]
 
 suffix_ken = "-ken-" 
-suffix_date = re.sub("|-", "", str(datetime.date.today()))
-print(suffix_date)
 suffix_filename_extention = ".pptx"
 
 args = sys.argv
@@ -89,7 +87,7 @@ else:
 
 while True:
     suffix_ken = "-ken-" 
-    suffix_filename_extention = ".pptx"
+    suffix_filename_extention = ".pptx|資料]]"
     printed_str = printed_format.format(d1, weeks[d1.weekday()])
     datetext = str(d1)
     suffix_date = re.sub("|-", "", datetext[:datetext.find(' ')])
@@ -101,17 +99,17 @@ while True:
     print(printed_str, end='')
     for index in range(len(lab_menber_list_M2)):
         if lab_menber_list_M2[index][1] == duty_M2 + 1:
-            print(lab_menber_list_M2[index][0] + suffix_text + "".join([" ||"]), end='')
+            print("[[attachment:" + lab_menber_list_M2[index][0] + suffix_text + "".join([" ||"]), end='')
         else:
             print(" ||", end='')
     for index in range(len(lab_menber_list_M1)):
         if lab_menber_list_M1[index][1] == duty_M1 + 1:
-            print(lab_menber_list_M1[index][0] + suffix_text + "".join([" ||"]), end='')
+            print("[[attachment:" + lab_menber_list_M1[index][0] + suffix_text + "".join([" ||"]), end='')
         else:
             print(" ||", end='')
     for index in range(len(lab_menber_list_B4)):
         if lab_menber_list_B4[index][1] == duty_B4 + 1:
-            print(lab_menber_list_B4[index][0] + suffix_text + "".join([" ||"]), end='')
+            print("[[attachment:" + lab_menber_list_B4[index][0] + suffix_text + "".join([" ||"]), end='')
         else:
             print(" ||", end='')
     print() # 改行
