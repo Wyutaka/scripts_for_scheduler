@@ -7,9 +7,9 @@ import datetime
 import re
 
 # ("名前", 何周目)
-lab_menber_list_M2 = [("foo", 1)]
-lab_menber_list_M1 = [("s-shiraki", 1), ("nomura", 2), ("t-yamamoto", 3),("y-watanabe", 3), ("nihonmatu", 1), ("miwagawa", 2)]
-lab_menber_list_B4 = [("hoge", 1), ("bar", 2)]
+lab_menber_list_M2 = [("r-kato", 1),("takeya", 2), ("okuda", 1), ("nakahara", 3), ("k-yamamoto", 2)]
+lab_menber_list_M1 = [("s-shiraki", 1), ("nomura", 2), ("t-yamamoto", 3),("y-watanabe", 3), ("nihommatsu", 1), ("miwagawa", 2)]
+lab_menber_list_B4 = [("aoba", 1), ("s-sato", 2), ("m-tsuduki", 2), ("y-hoshi", 3), ("a-yamada", 3), ("zhang", 3), ("n-kamiya", 1), ("s_sakai", 1), ("tatsumi", 2), ("fujie", 3)]
 
 def print_usage():
     print("Usage: ", end="")
