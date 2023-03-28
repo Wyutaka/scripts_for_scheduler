@@ -37,7 +37,7 @@
 	
 	実行例
 	```python
-	#[("名前"), 何周目]を各年度で入力する
+	#[("名前"), 何周目]を学年ごとに記入
 	lab_menber_list_M2 = [("foo", 1)]
 	lab_menber_list_M1 = [("s-shiraki", 1), ("nomura", 2), ("t-yamamoto", 3),("y-watanabe", 3), ("nihonmatu", 1), ("miwagawa", 2)]
 	lab_menber_list_B4 = [("hoge", 1), ("bar", 2)]
