@@ -1,5 +1,5 @@
 # 表作成スクリプト使い方メモ
-# 基本的にkento-kai-handout.pyを使っていれば問題ないと思います
+基本的にkento-kai-handout.pyを使っていれば問題ないと思います
 ## このフォルダに含まれるファイル
 - kento-kai.py
 	- 検討会用の表作成スクリプト（python）
